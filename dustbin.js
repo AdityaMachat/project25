@@ -6,17 +6,18 @@ class dustbin{
              density:1.2,
              friction:0.5,
         }
-        this.body= Bodies.rectangle(x,y,width,height,options);
+        this.body=Bodies.rectangle(x,y,width,height,options)
         this.width=width;
         this.height=height;
-        World.add(world,this.body);
+        this.image=loadImage("dust.png");
+        World.add(world,this.image);
         }
         
         display(){
          var posx=this.body.position.x
          var posy=this.body.position.y
-         rectMode(CENTER);
-         rect(posx,posy,this.width,this.height);
+         imageMode(CENTER);
+         image(this.image,posx,posy,this.width,this.height);
 
         }
 }
